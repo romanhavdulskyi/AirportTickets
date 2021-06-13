@@ -22,42 +22,42 @@ class DefaultFlightRepository(private val appDatabase: AppDatabase) : AirportRep
     override suspend fun insertAirport(airport: AirportEntity) {
         withContext(Dispatchers.IO)
         {
-            appDatabase.airportDao().insert(Mapping.mapEntityToModel(airport))
+            appDatabase.airportDao().insert(Mapping.mapEntityToDBModel(airport))
         }
     }
 
     override suspend fun insertAirports(airports: List<AirportEntity>) {
         withContext(Dispatchers.IO)
         {
-            appDatabase.airportDao().insertAll(airports.map { Mapping.mapEntityToModel(it) })
+            appDatabase.airportDao().insertAll(airports.map { Mapping.mapEntityToDBModel(it) })
         }
     }
 
     override suspend fun updateAirport(airport: AirportEntity) {
         withContext(Dispatchers.IO)
         {
-            appDatabase.airportDao().update(Mapping.mapEntityToModel(airport))
+            appDatabase.airportDao().update(Mapping.mapEntityToDBModel(airport))
         }
     }
 
     override suspend fun updateAirports(airport: List<AirportEntity>) {
         withContext(Dispatchers.IO)
         {
-            appDatabase.airportDao().updateAll(airport.map { Mapping.mapEntityToModel(it) })
+            appDatabase.airportDao().updateAll(airport.map { Mapping.mapEntityToDBModel(it) })
         }
     }
 
     override suspend fun deleteAirport(airport: AirportEntity) {
         withContext(Dispatchers.IO)
         {
-            appDatabase.airportDao().delete(Mapping.mapEntityToModel(airport))
+            appDatabase.airportDao().delete(Mapping.mapEntityToDBModel(airport))
         }
     }
 
     override suspend fun deleteAirports(airport: List<AirportEntity>) {
         withContext(Dispatchers.IO)
         {
-            appDatabase.airportDao().deleteAll(airport.map { Mapping.mapEntityToModel(it) })
+            appDatabase.airportDao().deleteAll(airport.map { Mapping.mapEntityToDBModel(it) })
         }
     }
 
@@ -80,7 +80,7 @@ class DefaultFlightRepository(private val appDatabase: AppDatabase) : AirportRep
         {
             appDatabase
                 .proposedFlightDao()
-                .insert(Mapping.mapEntityToModel(proposedFlightEntity))
+                .insert(Mapping.mapEntityToDBModel(proposedFlightEntity))
         }
     }
 
@@ -89,7 +89,7 @@ class DefaultFlightRepository(private val appDatabase: AppDatabase) : AirportRep
         {
             appDatabase
                 .proposedFlightDao()
-                .insertAll(proposedFlightEntities.map { Mapping.mapEntityToModel(it) })
+                .insertAll(proposedFlightEntities.map { Mapping.mapEntityToDBModel(it) })
         }
     }
 
@@ -98,7 +98,7 @@ class DefaultFlightRepository(private val appDatabase: AppDatabase) : AirportRep
         {
             appDatabase
                 .proposedFlightDao()
-                .update(Mapping.mapEntityToModel(proposedFlightEntity))
+                .update(Mapping.mapEntityToDBModel(proposedFlightEntity))
         }
     }
 
@@ -107,7 +107,7 @@ class DefaultFlightRepository(private val appDatabase: AppDatabase) : AirportRep
         {
             appDatabase
                 .proposedFlightDao()
-                .updateAll(proposedFlightEntities.map { Mapping.mapEntityToModel(it) })
+                .updateAll(proposedFlightEntities.map { Mapping.mapEntityToDBModel(it) })
         }
     }
 
@@ -116,7 +116,7 @@ class DefaultFlightRepository(private val appDatabase: AppDatabase) : AirportRep
         {
             appDatabase
                 .proposedFlightDao()
-                .delete(Mapping.mapEntityToModel(proposedFlightEntity))
+                .delete(Mapping.mapEntityToDBModel(proposedFlightEntity))
         }
     }
 
@@ -125,7 +125,7 @@ class DefaultFlightRepository(private val appDatabase: AppDatabase) : AirportRep
         {
             appDatabase
                 .proposedFlightDao()
-                .deleteAll(proposedFlightEntities.map { Mapping.mapEntityToModel(it) })
+                .deleteAll(proposedFlightEntities.map { Mapping.mapEntityToDBModel(it) })
         }
     }
 
@@ -164,7 +164,7 @@ class DefaultFlightRepository(private val appDatabase: AppDatabase) : AirportRep
         {
             appDatabase
                 .purchasedTicketDao()
-                .insert(Mapping.mapEntityToModel(ticketEntity))
+                .insert(Mapping.mapEntityToDBModel(ticketEntity))
         }
     }
 
@@ -173,7 +173,7 @@ class DefaultFlightRepository(private val appDatabase: AppDatabase) : AirportRep
         {
             appDatabase
                 .purchasedTicketDao()
-                .insertAll(ticketEntities.map { Mapping.mapEntityToModel(it) })
+                .insertAll(ticketEntities.map { Mapping.mapEntityToDBModel(it) })
         }
     }
 
@@ -182,7 +182,7 @@ class DefaultFlightRepository(private val appDatabase: AppDatabase) : AirportRep
         {
             appDatabase
                 .purchasedTicketDao()
-                .update(Mapping.mapEntityToModel(ticketEntity))
+                .update(Mapping.mapEntityToDBModel(ticketEntity))
         }
     }
 
@@ -191,7 +191,7 @@ class DefaultFlightRepository(private val appDatabase: AppDatabase) : AirportRep
         {
             appDatabase
                 .purchasedTicketDao()
-                .updateAll(ticketEntities.map { Mapping.mapEntityToModel(it) })
+                .updateAll(ticketEntities.map { Mapping.mapEntityToDBModel(it) })
         }
     }
 
@@ -200,7 +200,7 @@ class DefaultFlightRepository(private val appDatabase: AppDatabase) : AirportRep
         {
             appDatabase
                 .purchasedTicketDao()
-                .delete(Mapping.mapEntityToModel(ticketEntity))
+                .delete(Mapping.mapEntityToDBModel(ticketEntity))
         }
     }
 
@@ -209,7 +209,7 @@ class DefaultFlightRepository(private val appDatabase: AppDatabase) : AirportRep
         {
             appDatabase
                 .purchasedTicketDao()
-                .deleteAll(ticketEntities.map { Mapping.mapEntityToModel(it) })
+                .deleteAll(ticketEntities.map { Mapping.mapEntityToDBModel(it) })
         }
     }
 
@@ -227,7 +227,7 @@ class DefaultFlightRepository(private val appDatabase: AppDatabase) : AirportRep
 
     private fun prepareAirportEntity(airport: Airport): AirportEntity? {
         val city = appDatabase.cityDao().fetchCity(airport.cityId)
-        return Mapping.mapModelToEntity(airport, city)
+        return Mapping.mapDBModelToEntity(airport, city)
     }
 
     private fun prepareProposedFlightEntity(
@@ -240,12 +240,12 @@ class DefaultFlightRepository(private val appDatabase: AppDatabase) : AirportRep
         val toAirport = appDatabase.airportDao().fetchAirport(flight.toAirportId)
         val toCity = toAirport?.cityId?.let { appDatabase.cityDao().fetchCity(it) }
         return fromAirport?.let { fromAirportTmp ->
-            Mapping.mapModelToEntity(fromAirportTmp, fromCity)
+            Mapping.mapDBModelToEntity(fromAirportTmp, fromCity)
                 ?.let { fromAirportEntity ->
                     toAirport?.let { toAirportTmp ->
-                        Mapping.mapModelToEntity(toAirportTmp, toCity)
+                        Mapping.mapDBModelToEntity(toAirportTmp, toCity)
                             ?.let { toAirportEntity ->
-                                Mapping.mapModelToEntity(
+                                Mapping.mapDBModelToEntity(
                                     flight,
                                     fromAirportEntity,
                                     toAirportEntity
@@ -263,7 +263,7 @@ class DefaultFlightRepository(private val appDatabase: AppDatabase) : AirportRep
         return flight?.let {
             val flightEntity = prepareProposedFlightEntity(it)
             flightEntity?.let {
-                val ticket = Mapping.mapModelToEntity(purchasedTicket, flightEntity)
+                val ticket = Mapping.mapDBModelToEntity(purchasedTicket, flightEntity)
                 ticket
             }
         }

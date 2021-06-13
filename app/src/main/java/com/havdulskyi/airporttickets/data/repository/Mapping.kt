@@ -24,7 +24,7 @@ object Mapping {
         return ZonedDateTime.parse(time, formatter)
     }
 
-    fun mapEntityToModel(airportEntity: AirportEntity): Airport {
+    fun mapEntityToDBModel(airportEntity: AirportEntity): Airport {
         return Airport(
             id = airportEntity.id,
             airportName = airportEntity.airportName,
@@ -34,7 +34,7 @@ object Mapping {
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    fun mapEntityToModel(proposedFlightEntity: ProposedFlightEntity): ProposedFlight {
+    fun mapEntityToDBModel(proposedFlightEntity: ProposedFlightEntity): ProposedFlight {
         return ProposedFlight(
             id = proposedFlightEntity.id,
             fromAirportId = proposedFlightEntity.fromAirport.id,
@@ -45,7 +45,7 @@ object Mapping {
         )
     }
 
-    fun mapEntityToModel(purchasedTicketEntity: PurchasedTicketEntity): PurchasedTicket {
+    fun mapEntityToDBModel(purchasedTicketEntity: PurchasedTicketEntity): PurchasedTicket {
         return PurchasedTicket(
             id = purchasedTicketEntity.id,
             proposedFlightId = purchasedTicketEntity.proposedFlight.id,
@@ -55,7 +55,7 @@ object Mapping {
         )
     }
 
-    fun mapEntityToModel(userProfileEntity: UserProfileEntity): UserProfile {
+    fun mapEntityToDBModel(userProfileEntity: UserProfileEntity): UserProfile {
         return UserProfile(
             id = userProfileEntity.id,
             nickName = userProfileEntity.nickName,
@@ -63,7 +63,7 @@ object Mapping {
         )
     }
 
-    fun mapModelToEntity(airport: Airport, city: City?): AirportEntity? {
+    fun mapDBModelToEntity(airport: Airport, city: City?): AirportEntity? {
         return city?.let {
             AirportEntity(
                 id = airport.id,
@@ -75,10 +75,10 @@ object Mapping {
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    fun mapModelToEntity(
+    fun mapDBModelToEntity(
         proposedFlight: ProposedFlight,
         fromAirport: AirportEntity,
-        toAirport: AirportEntity
+        toAirport: AirportEntity,
     ): ProposedFlightEntity {
         return ProposedFlightEntity(
             id = proposedFlight.id,
@@ -90,9 +90,9 @@ object Mapping {
         )
     }
 
-    fun mapModelToEntity(
+    fun mapDBModelToEntity(
         purchasedTicket: PurchasedTicket,
-        proposedFlight: ProposedFlightEntity
+        proposedFlight: ProposedFlightEntity,
     ): PurchasedTicketEntity {
         return PurchasedTicketEntity(
             id = purchasedTicket.id,
@@ -103,8 +103,8 @@ object Mapping {
         )
     }
 
-    fun mapModelToEntity(
-        userProfile: UserProfile
+    fun mapDBModelToEntity(
+        userProfile: UserProfile,
     ): UserProfileEntity {
         return UserProfileEntity(
             id = userProfile.id,

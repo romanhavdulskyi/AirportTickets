@@ -15,7 +15,7 @@ class UserProfileRepositoryImpl(private val appDatabase: AppDatabase) : UserProf
         {
             appDatabase
                 .userProfileDao()
-                .insert(Mapping.mapEntityToModel(userProfileEntity))
+                .insert(Mapping.mapEntityToDBModel(userProfileEntity))
         }
     }
 
@@ -24,7 +24,7 @@ class UserProfileRepositoryImpl(private val appDatabase: AppDatabase) : UserProf
         {
             appDatabase
                 .userProfileDao()
-                .insertAll(userProfileEntities.map { Mapping.mapEntityToModel(it) })
+                .insertAll(userProfileEntities.map { Mapping.mapEntityToDBModel(it) })
         }
     }
 
@@ -33,7 +33,7 @@ class UserProfileRepositoryImpl(private val appDatabase: AppDatabase) : UserProf
         {
             appDatabase
                 .userProfileDao()
-                .insert(Mapping.mapEntityToModel(userProfileEntity))
+                .insert(Mapping.mapEntityToDBModel(userProfileEntity))
         }
     }
 
@@ -42,7 +42,7 @@ class UserProfileRepositoryImpl(private val appDatabase: AppDatabase) : UserProf
         {
             appDatabase
                 .userProfileDao()
-                .updateAll(userProfileEntities.map { Mapping.mapEntityToModel(it) })
+                .updateAll(userProfileEntities.map { Mapping.mapEntityToDBModel(it) })
         }
     }
 
@@ -51,7 +51,7 @@ class UserProfileRepositoryImpl(private val appDatabase: AppDatabase) : UserProf
         {
             appDatabase
                 .userProfileDao()
-                .delete(Mapping.mapEntityToModel(userProfileEntity))
+                .delete(Mapping.mapEntityToDBModel(userProfileEntity))
         }
     }
 
@@ -60,7 +60,7 @@ class UserProfileRepositoryImpl(private val appDatabase: AppDatabase) : UserProf
         {
             appDatabase
                 .userProfileDao()
-                .deleteAll(userProfileEntities.map { Mapping.mapEntityToModel(it) })
+                .deleteAll(userProfileEntities.map { Mapping.mapEntityToDBModel(it) })
         }
     }
 
@@ -68,7 +68,7 @@ class UserProfileRepositoryImpl(private val appDatabase: AppDatabase) : UserProf
         return appDatabase.userProfileDao().usersFlow().flatMapLatest { list ->
             flowOf(list
                 .filterNotNull()
-                .map { Mapping.mapModelToEntity(it) })
+                .map { Mapping.mapDBModelToEntity(it) })
         }.flowOn(Dispatchers.IO)
     }
 }
