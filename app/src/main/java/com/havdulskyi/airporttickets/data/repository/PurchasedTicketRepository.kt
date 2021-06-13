@@ -13,5 +13,5 @@ interface PurchasedTicketRepository {
     suspend fun deleteTicket(ticketEntity: PurchasedTicketEntity)
     suspend fun deleteTickets(ticketEntities: List<PurchasedTicketEntity>)
 
-    fun observeTickets(): Flow<List<PurchasedTicketEntity>>
+    fun observeTickets(userId: String): Flow<List<PurchasedTicketEntity>>
 }

@@ -2,13 +2,14 @@ package com.havdulskyi.airporttickets.view.flight
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.havdulskyi.airporttickets.common.Event
 import com.havdulskyi.airporttickets.data.entity.ProposedFlightEntity
 import com.havdulskyi.airporttickets.data.entity.PurchasedTicketEntity
+import com.havdulskyi.airporttickets.data.entity.UserProfileEntity
 import com.havdulskyi.airporttickets.data.repository.ProposedFlightRepository
 import com.havdulskyi.airporttickets.data.repository.PurchasedTicketRepository
+import com.havdulskyi.airporttickets.data.repository.UserProfileRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.*
@@ -18,14 +19,17 @@ import java.time.ZonedDateTime
 import java.util.*
 
 @FlowPreview
-class FlightViewModel(private val flightRepository: ProposedFlightRepository,
-                      private val purchasedTicketRepository: PurchasedTicketRepository) : ViewModel() {
+class FlightViewModel(
+    private val flightRepository: ProposedFlightRepository,
+    private val purchasedTicketRepository: PurchasedTicketRepository,
+    private val userProfileRepository: UserProfileRepository,
+) : ViewModel() {
 
+    private var currentUser: UserProfileEntity? = null
     private val searchQuery = MutableSharedFlow<String>(replay = 1)
     private val departureDate = MutableSharedFlow<LocalDate>(replay = 1)
 
-    fun setDepartureDate(date : GregorianCalendar)
-    {
+    fun setDepartureDate(date: GregorianCalendar) {
         departureDate.tryEmit(date.toZonedDateTime().toLocalDate())
     }
 
@@ -38,12 +42,14 @@ class FlightViewModel(private val flightRepository: ProposedFlightRepository,
     {
         showBookedDialog.value = Event(proposedFlightEntity.id)
         viewModelScope.launch {
+
             val randomId = UUID.randomUUID().toString()
             purchasedTicketRepository.insertTicket(PurchasedTicketEntity(
                 id = proposedFlightEntity.id + randomId,
                 proposedFlight = proposedFlightEntity,
                 purchaseId = randomId,
-                purchaseTimestamp = ZonedDateTime.now()
+                purchaseTimestamp = ZonedDateTime.now(),
+                userId = currentUser?.id ?: ""
             ))
         }
     }
@@ -57,6 +63,13 @@ class FlightViewModel(private val flightRepository: ProposedFlightRepository,
 
     init {
         viewModelScope.launch {
+
+            val users = userProfileRepository
+                .observeUsers()
+                .firstOrNull()
+
+            currentUser = users?.firstOrNull()
+
             departureDate.tryEmit(LocalDate.now())
             searchQuery.tryEmit("")
             searchQuery

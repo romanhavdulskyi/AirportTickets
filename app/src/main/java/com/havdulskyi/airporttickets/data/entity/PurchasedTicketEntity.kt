@@ -6,5 +6,7 @@ data class PurchasedTicketEntity(
     val id: String,
     val proposedFlight: ProposedFlightEntity,
     val purchaseId: String,
-    val purchaseTimestamp: ZonedDateTime
-)
+    val purchaseTimestamp: ZonedDateTime,
+    val userId: String,
+
+    )

@@ -9,5 +9,6 @@ data class PurchasedTicket(
     val id: String,
     val proposedFlightId: String,
     val purchaseId: String,
-    val purchaseTimestamp: String
+    val purchaseTimestamp: String,
+    val userId: String,
 )

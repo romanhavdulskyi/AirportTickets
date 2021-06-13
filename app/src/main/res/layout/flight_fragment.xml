@@ -44,7 +44,7 @@
         <com.emc.verticalweekcalendar.VerticalWeekCalendar
             android:id="@+id/verticalCalendar"
             android:layout_width="0dp"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
             app:customFont="quicksand_bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

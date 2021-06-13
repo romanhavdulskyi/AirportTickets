@@ -3,7 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'koin'
-
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -49,6 +49,7 @@ dependencies {
     implementation 'com.google.zxing:core:3.4.1'
 
     implementation project(path: ':verticalweekcalendar')
+    implementation 'com.google.firebase:firebase-auth:21.0.1'
     def room_version = "2.3.0"
 
     def coroutines_version = '1.5.0'
@@ -105,5 +106,10 @@ dependencies {
     implementation "io.insert-koin:koin-androidx-workmanager:$koin_version"
     // Koin AndroidX Experimental features
     implementation "io.insert-koin:koin-androidx-ext:$koin_version"
+
+    implementation platform('com.google.firebase:firebase-bom:28.1.0')
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation "com.firebaseui:firebase-ui-auth:7.1.1"
+    implementation "com.google.firebase:firebase-auth-ktx:21.0.1"
 
 }

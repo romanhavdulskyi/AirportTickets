@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "251944723190",
+    "project_id": "airplane-ticket-8775d",
+    "storage_bucket": "airplane-ticket-8775d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:251944723190:android:b3f423c8a3cd7c51a542d7",
+        "android_client_info": {
+          "package_name": "com.havdulskyi.airporttickets"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "251944723190-5d8de6c18j8dsf8jgivsi8h6m02t6rfs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCu7H-2rdCfZIg6phx1o2oLHzzQMioTAKQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "251944723190-5d8de6c18j8dsf8jgivsi8h6m02t6rfs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

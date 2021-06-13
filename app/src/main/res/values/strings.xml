@@ -9,4 +9,8 @@
     <string name="no_one_ticket">No one ticket</string>
     <string name="no_one_flight">No one flight</string>
     <string name="show_ticket">Show ticket</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="proceed_without_signing_in">Proceed without signing in</string>
+    <string name="lviv_airport">Lviv airport</string>
+    <string name="sign_in_as_a_guest">Sign in as a guest</string>
 </resources>

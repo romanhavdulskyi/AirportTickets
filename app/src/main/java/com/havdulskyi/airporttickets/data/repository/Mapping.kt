@@ -50,7 +50,8 @@ object Mapping {
             id = purchasedTicketEntity.id,
             proposedFlightId = purchasedTicketEntity.proposedFlight.id,
             purchaseId = purchasedTicketEntity.purchaseId,
-            purchaseTimestamp = mapZonedDateTimeToString(purchasedTicketEntity.purchaseTimestamp)
+            purchaseTimestamp = mapZonedDateTimeToString(purchasedTicketEntity.purchaseTimestamp),
+            userId = purchasedTicketEntity.userId
         )
     }
 
@@ -97,7 +98,8 @@ object Mapping {
             id = purchasedTicket.id,
             proposedFlight = proposedFlight,
             purchaseId = purchasedTicket.purchaseId,
-            purchaseTimestamp = mapZonedDateTimeFromString(purchasedTicket.purchaseTimestamp)
+            purchaseTimestamp = mapZonedDateTimeFromString(purchasedTicket.purchaseTimestamp),
+            userId = purchasedTicket.userId
         )
     }
 
