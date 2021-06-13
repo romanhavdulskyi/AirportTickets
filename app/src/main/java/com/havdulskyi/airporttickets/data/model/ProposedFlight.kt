@@ -9,6 +9,7 @@ data class ProposedFlight(
     val id: String,
     val fromAirportId: String,
     val toAirportId: String,
+    val departureTime: String,
     val arriveTime: String,
     val ticketCost: Double
 )

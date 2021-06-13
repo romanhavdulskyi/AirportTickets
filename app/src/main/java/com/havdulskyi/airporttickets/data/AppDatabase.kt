@@ -15,6 +15,4 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun proposedFlightDao(): ProposedFlightDao
     abstract fun purchasedTicketDao(): PurchaseTicketDao
     abstract fun userProfileDao(): UserProfileDao
-
-
 }

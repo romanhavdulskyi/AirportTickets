@@ -1,2 +1,3 @@
 rootProject.name = "AirportTickets"
 include ':app'
+include ':verticalweekcalendar'

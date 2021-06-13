@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">AirportTickets</string>
+    <string name="app_name">Lviv Airport</string>
+    <string name="my_tickets">My tickets</string>
+    <string name="flights">Flights</string>
+    <string name="type_the_destination_city">Type the destination city...</string>
+    <string name="book_it">Book it</string>
+    <string name="departure_at">Depart. at:</string>
+    <string name="arrive_at">Arrive at:</string>
+    <string name="no_one_ticket">No one ticket</string>
+    <string name="no_one_flight">No one flight</string>
+    <string name="show_ticket">Show ticket</string>
 </resources>
