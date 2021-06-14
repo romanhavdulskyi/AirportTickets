@@ -1,9 +1,17 @@
 package com.havdulskyi.airporttickets.data.model
 
 import androidx.room.Entity
+import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 
-@Entity
+@Entity(foreignKeys = [ForeignKey(entity = Airport::class,
+    parentColumns = arrayOf("id"),
+    childColumns = arrayOf("fromAirportId"),
+    onDelete = ForeignKey.CASCADE),
+    ForeignKey(entity = Airport::class,
+        parentColumns = arrayOf("id"),
+        childColumns = arrayOf("toAirportId"),
+        onDelete = ForeignKey.CASCADE)])
 data class ProposedFlight(
     @PrimaryKey
     val id: String,

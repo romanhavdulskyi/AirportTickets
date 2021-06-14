@@ -14,6 +14,7 @@ import java.util.*
 class InitialViewModel(private val userProfileRepository: UserProfileRepository) : ViewModel() {
 
     val navigateToMainActivity = MutableLiveData<Event<Boolean>>()
+    val initialViewVisible = MutableLiveData<Boolean>(false)
 
     fun loginWithFirebase(firebaseUser: FirebaseUser) {
         viewModelScope.launch {
@@ -40,6 +41,7 @@ class InitialViewModel(private val userProfileRepository: UserProfileRepository)
             userProfileRepository
                 .observeUsers()
                 .collect { users ->
+                    initialViewVisible.postValue(users.isEmpty())
                     if (users.isNotEmpty())
                         navigateToMainActivity.postValue(Event(true))
                 }

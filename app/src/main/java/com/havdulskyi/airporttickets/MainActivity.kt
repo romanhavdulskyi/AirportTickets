@@ -1,8 +1,9 @@
 package com.havdulskyi.airporttickets
 
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.Navigation
+import androidx.navigation.ui.NavigationUI
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -10,25 +11,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.navigation)
-        val flightFragment = supportFragmentManager.findFragmentById(R.id.flightFragment)
-        val ticketFragment = supportFragmentManager.findFragmentById(R.id.ticketFragment)
-
-        flightFragment?.view?.visibility = View.VISIBLE
-        ticketFragment?.view?.visibility = View.GONE
-
-        bottomNavigation?.setOnNavigationItemSelectedListener {
-            //Todo that's the incredible stupid solution,
-            // but it's also so quickly way of proceeding a switch between fragments
-            if(it.itemId == R.id.action_flights) {
-                flightFragment?.view?.visibility = View.VISIBLE
-                ticketFragment?.view?.visibility = View.GONE
-            } else {
-                flightFragment?.view?.visibility = View.GONE
-                ticketFragment?.view?.visibility = View.VISIBLE
-            }
-            true
-        }
+        val navigationHost =
+            Navigation.findNavController(this, R.id.activity_main_nav_host_fragment)
+        NavigationUI.setupWithNavController(bottomNavigation, navigationHost)
     }
-
-
 }
