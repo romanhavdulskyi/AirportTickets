@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.IdpResponse
+import com.google.android.gms.common.SignInButton
 import com.google.android.material.button.MaterialButton
 import com.google.firebase.auth.FirebaseAuth
 import com.havdulskyi.airporttickets.MainActivity
@@ -29,8 +30,10 @@ class InitialActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.initial_activity)
         val mainView = findViewById<ConstraintLayout>(R.id.mainView)
-        val signInWithGoogleBtn = findViewById<MaterialButton>(R.id.signInWithGoogle)
+        val signInWithGoogleBtn = findViewById<SignInButton>(R.id.signInWithGoogle)
         val signInAsGuestBtn = findViewById<MaterialButton>(R.id.signInAsGuest)
+        signInWithGoogleBtn.setSize(SignInButton.SIZE_WIDE)
+
         signInWithGoogleBtn.setOnClickListener {
             // Choose authentication providers
             val providers = arrayListOf(
