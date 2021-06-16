@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.widget.addTextChangedListener
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -58,7 +59,7 @@ class FlightFragment : Fragment() {
         binding.flightList.layoutManager = LinearLayoutManager(requireContext())
         binding.flightList.adapter = adapter
         binding.autoCompleteTextView.addTextChangedListener {
-            model.setSearchQuery(it.toString() ?: "")
+            model.setSearchQuery(it.toString())
         }
         binding.verticalCalendar.init()
         model.flightsLiveData.observe(viewLifecycleOwner, {
@@ -88,9 +89,9 @@ class FlightFragment : Fragment() {
     private fun showBookedDialog(flightId : String)
     {
         MaterialAlertDialogBuilder(requireActivity())
-            .setTitle("You booked the ticket with id $flightId")
-            .setMessage("Here should a Google Billing dialog, but it's the simplest example ^)")
-            .setPositiveButton("Okay") { dialog, _ ->
+            .setTitle(getString(R.string.you_booked_the_ticket) + flightId)
+            .setMessage(getString(R.string.billing_msg))
+            .setPositiveButton(getString(R.string.okay)) { dialog, _ ->
                 dialog.dismiss()
             }
             .show()

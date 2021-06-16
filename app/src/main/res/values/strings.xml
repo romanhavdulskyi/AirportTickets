@@ -13,4 +13,7 @@
     <string name="proceed_without_signing_in">Proceed without signing in</string>
     <string name="lviv_airport">Lviv airport</string>
     <string name="sign_in_as_a_guest">Sign in as a guest</string>
+    <string name="billing_msg">Here should be a Google Billing dialog, but it\'s the simplest example ^)</string>
+    <string name="you_booked_the_ticket">\"You booked the ticket with id \"</string>
+    <string name="okay">Okay</string>
 </resources>
