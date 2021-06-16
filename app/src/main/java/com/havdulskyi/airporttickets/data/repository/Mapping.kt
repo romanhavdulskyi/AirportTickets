@@ -1,7 +1,5 @@
 package com.havdulskyi.airporttickets.data.repository
 
-import android.os.Build
-import androidx.annotation.RequiresApi
 import com.havdulskyi.airporttickets.data.dbModel.*
 import com.havdulskyi.airporttickets.data.entity.AirportEntity
 import com.havdulskyi.airporttickets.data.entity.ProposedFlightEntity
@@ -10,16 +8,13 @@ import com.havdulskyi.airporttickets.data.entity.UserProfileEntity
 import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
 
-@RequiresApi(Build.VERSION_CODES.O)
 object Mapping {
     private var formatter: DateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss a z")
 
-    @RequiresApi(Build.VERSION_CODES.O)
     fun mapZonedDateTimeToString(zonedDateTime: ZonedDateTime): String {
         return zonedDateTime.format(formatter)
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
     fun mapZonedDateTimeFromString(time: String): ZonedDateTime {
         return ZonedDateTime.parse(time, formatter)
     }
@@ -33,7 +28,6 @@ object Mapping {
         )
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
     fun mapEntityToDBModel(proposedFlightEntity: ProposedFlightEntity): ProposedFlight {
         return ProposedFlight(
             id = proposedFlightEntity.id,
@@ -74,7 +68,6 @@ object Mapping {
         }
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
     fun mapDBModelToEntity(
         proposedFlight: ProposedFlight,
         fromAirport: AirportEntity,

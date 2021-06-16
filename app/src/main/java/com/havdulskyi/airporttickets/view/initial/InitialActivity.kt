@@ -16,6 +16,7 @@ import com.havdulskyi.airporttickets.view.main.MainActivity
 import com.havdulskyi.airporttickets.viewModel.initial.InitialViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 
+@Suppress("DEPRECATION")
 class InitialActivity : AppCompatActivity() {
 
     companion object {
