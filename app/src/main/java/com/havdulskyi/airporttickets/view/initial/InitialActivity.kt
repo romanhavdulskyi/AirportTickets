@@ -11,8 +11,8 @@ import com.firebase.ui.auth.IdpResponse
 import com.google.android.gms.common.SignInButton
 import com.google.android.material.button.MaterialButton
 import com.google.firebase.auth.FirebaseAuth
-import com.havdulskyi.airporttickets.MainActivity
 import com.havdulskyi.airporttickets.R
+import com.havdulskyi.airporttickets.view.main.MainActivity
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class InitialActivity : AppCompatActivity() {

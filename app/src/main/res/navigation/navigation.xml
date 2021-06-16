@@ -6,10 +6,10 @@
 
     <fragment
         android:id="@+id/flightFragment"
-        android:name="com.havdulskyi.airporttickets.view.flight.FlightFragment"
+        android:name="com.havdulskyi.airporttickets.view.main.flight.FlightFragment"
         android:label="FlightFragment" />
     <fragment
         android:id="@+id/purchasedTicketFragment"
-        android:name="com.havdulskyi.airporttickets.view.purchased.PurchasedTicketFragment"
+        android:name="com.havdulskyi.airporttickets.view.main.purchased.PurchasedTicketFragment"
         android:label="PurchasedTicketFragment" />
 </navigation>

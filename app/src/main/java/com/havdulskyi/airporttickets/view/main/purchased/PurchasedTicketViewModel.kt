@@ -1,4 +1,4 @@
-package com.havdulskyi.airporttickets.view.purchased
+package com.havdulskyi.airporttickets.view.main.purchased
 
 import android.graphics.Bitmap
 import androidx.lifecycle.MutableLiveData

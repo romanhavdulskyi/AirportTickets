@@ -6,9 +6,9 @@ import com.havdulskyi.airporttickets.data.AppDatabase
 import com.havdulskyi.airporttickets.data.BaseInitializer
 import com.havdulskyi.airporttickets.data.DbInitializer
 import com.havdulskyi.airporttickets.data.repository.*
-import com.havdulskyi.airporttickets.view.flight.FlightViewModel
 import com.havdulskyi.airporttickets.view.initial.InitialViewModel
-import com.havdulskyi.airporttickets.view.purchased.PurchasedTicketViewModel
+import com.havdulskyi.airporttickets.view.main.flight.FlightViewModel
+import com.havdulskyi.airporttickets.view.main.purchased.PurchasedTicketViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.bind
 import org.koin.dsl.module

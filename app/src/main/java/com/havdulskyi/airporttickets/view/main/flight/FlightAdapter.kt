@@ -1,4 +1,4 @@
-package com.havdulskyi.airporttickets.view.purchased
+package com.havdulskyi.airporttickets.view.main.flight
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,32 +6,32 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.RecyclerView
 import com.havdulskyi.airporttickets.R
-import com.havdulskyi.airporttickets.data.entity.PurchasedTicketEntity
-import com.havdulskyi.airporttickets.databinding.TicketItemBinding
+import com.havdulskyi.airporttickets.data.entity.ProposedFlightEntity
+import com.havdulskyi.airporttickets.databinding.FlightItemBinding
 
-class PurchasedTicketAdapter(private val lifecycleOwner: LifecycleOwner,
-                             private val purchasedTicketViewModel: PurchasedTicketViewModel) :
-        RecyclerView.Adapter<PurchasedTicketAdapter.ViewHolder>() {
+class FlightAdapter(private val lifecycleOwner: LifecycleOwner,
+                    private val flightViewModel: FlightViewModel) :
+        RecyclerView.Adapter<FlightAdapter.ViewHolder>() {
 
     init {
         setHasStableIds(true)
     }
 
-    private var dataSet: MutableList<PurchasedTicketEntity> = mutableListOf()
+    private var dataSet: MutableList<ProposedFlightEntity> = mutableListOf()
 
     override fun getItemId(position: Int): Long {
         return dataSet[position].id.hashCode().toLong()
     }
 
-    fun setData(data: List<PurchasedTicketEntity>)
+    fun setData(data: List<ProposedFlightEntity>)
     {
         dataSet.clear()
         dataSet.addAll(data)
         notifyDataSetChanged()
     }
 
-    class ViewHolder(val ticketItemBinding: TicketItemBinding) : RecyclerView.ViewHolder(ticketItemBinding.root) {
-    }
+    class ViewHolder(val flightItemBinding: FlightItemBinding) :
+        RecyclerView.ViewHolder(flightItemBinding.root)
 
     // Create new views (invoked by the layout manager)
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
@@ -39,7 +39,7 @@ class PurchasedTicketAdapter(private val lifecycleOwner: LifecycleOwner,
         val inflater = LayoutInflater.from(viewGroup.context)
         return ViewHolder(DataBindingUtil
             .inflate(inflater,
-                R.layout.ticket_item,
+                R.layout.flight_item,
                 viewGroup,
                 false))
     }
@@ -48,10 +48,10 @@ class PurchasedTicketAdapter(private val lifecycleOwner: LifecycleOwner,
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
 
        val item = dataSet[position]
-        viewHolder.ticketItemBinding.flight = item
-        viewHolder.ticketItemBinding.flightViewModel = purchasedTicketViewModel
-        viewHolder.ticketItemBinding.lifecycleOwner = lifecycleOwner
-        viewHolder.ticketItemBinding.executePendingBindings()
+        viewHolder.flightItemBinding.flight = item
+        viewHolder.flightItemBinding.flightViewModel = flightViewModel
+        viewHolder.flightItemBinding.lifecycleOwner = lifecycleOwner
+        viewHolder.flightItemBinding.executePendingBindings()
     }
 
     // Return the size of your dataset (invoked by the layout manager)

@@ -1,4 +1,4 @@
-package com.havdulskyi.airporttickets.view.flight
+package com.havdulskyi.airporttickets.view.main.flight
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

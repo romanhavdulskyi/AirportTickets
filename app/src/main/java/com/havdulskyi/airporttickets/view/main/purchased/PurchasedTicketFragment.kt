@@ -1,12 +1,10 @@
-package com.havdulskyi.airporttickets.view.purchased
+package com.havdulskyi.airporttickets.view.main.purchased
 
-import android.app.Dialog
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.WindowManager
 import android.widget.ImageView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -15,7 +13,6 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.havdulskyi.airporttickets.R
 import com.havdulskyi.airporttickets.databinding.PurchasedTicketFragmentBinding
 import org.koin.android.viewmodel.ext.android.viewModel
-import java.util.*
 
 class PurchasedTicketFragment : Fragment() {
 
