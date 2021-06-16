@@ -18,7 +18,7 @@ val appModule = module {
     single { DefaultFlightRepository(provideDatabase(get())) } bind AirportRepository::class bind ProposedFlightRepository::class bind PurchasedTicketRepository::class bind CityRepository::class
     single<UserProfileRepository> { UserProfileRepositoryImpl(provideDatabase(get())) }
 
-    single<BaseInitializer> { DbInitializer(get(), get(), get(), get()) }
+    single<BaseInitializer> { DbInitializer(get(), get(), get()) }
     viewModel { FlightViewModel(get(), get(), get()) }
     viewModel { PurchasedTicketViewModel(get(), get()) }
     viewModel { InitialViewModel(get()) }

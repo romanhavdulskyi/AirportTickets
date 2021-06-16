@@ -6,7 +6,6 @@ import com.havdulskyi.airporttickets.data.entity.ProposedFlightEntity
 import com.havdulskyi.airporttickets.data.repository.AirportRepository
 import com.havdulskyi.airporttickets.data.repository.CityRepository
 import com.havdulskyi.airporttickets.data.repository.ProposedFlightRepository
-import com.havdulskyi.airporttickets.data.repository.UserProfileRepository
 import java.time.LocalDate
 import java.time.ZoneId
 
@@ -20,7 +19,6 @@ class DbInitializer(
     private val cityRepository: CityRepository,
     private val airportRepository: AirportRepository,
     private val proposedFlightRepository: ProposedFlightRepository,
-    private val userProfileRepository: UserProfileRepository,
 ) : BaseInitializer {
     override suspend fun initializeForDate(now: LocalDate) {
         initializeData(now)
