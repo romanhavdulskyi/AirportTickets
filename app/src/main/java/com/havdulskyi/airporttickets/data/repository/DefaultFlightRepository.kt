@@ -2,13 +2,13 @@ package com.havdulskyi.airporttickets.data.repository
 
 import android.util.Log
 import com.havdulskyi.airporttickets.data.AppDatabase
+import com.havdulskyi.airporttickets.data.dbModel.Airport
+import com.havdulskyi.airporttickets.data.dbModel.City
+import com.havdulskyi.airporttickets.data.dbModel.ProposedFlight
+import com.havdulskyi.airporttickets.data.dbModel.PurchasedTicket
 import com.havdulskyi.airporttickets.data.entity.AirportEntity
 import com.havdulskyi.airporttickets.data.entity.ProposedFlightEntity
 import com.havdulskyi.airporttickets.data.entity.PurchasedTicketEntity
-import com.havdulskyi.airporttickets.data.model.Airport
-import com.havdulskyi.airporttickets.data.model.City
-import com.havdulskyi.airporttickets.data.model.ProposedFlight
-import com.havdulskyi.airporttickets.data.model.PurchasedTicket
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.withContext

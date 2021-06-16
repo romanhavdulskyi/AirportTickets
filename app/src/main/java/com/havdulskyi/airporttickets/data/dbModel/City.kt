@@ -1,4 +1,4 @@
-package com.havdulskyi.airporttickets.data.model
+package com.havdulskyi.airporttickets.data.dbModel
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

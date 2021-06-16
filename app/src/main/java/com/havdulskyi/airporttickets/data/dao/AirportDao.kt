@@ -1,7 +1,7 @@
 package com.havdulskyi.airporttickets.data.dao
 
 import androidx.room.*
-import com.havdulskyi.airporttickets.data.model.Airport
+import com.havdulskyi.airporttickets.data.dbModel.Airport
 import kotlinx.coroutines.flow.Flow
 
 @Dao

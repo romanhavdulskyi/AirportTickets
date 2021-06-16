@@ -2,11 +2,11 @@ package com.havdulskyi.airporttickets.data.repository
 
 import android.os.Build
 import androidx.annotation.RequiresApi
+import com.havdulskyi.airporttickets.data.dbModel.*
 import com.havdulskyi.airporttickets.data.entity.AirportEntity
 import com.havdulskyi.airporttickets.data.entity.ProposedFlightEntity
 import com.havdulskyi.airporttickets.data.entity.PurchasedTicketEntity
 import com.havdulskyi.airporttickets.data.entity.UserProfileEntity
-import com.havdulskyi.airporttickets.data.model.*
 import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
 

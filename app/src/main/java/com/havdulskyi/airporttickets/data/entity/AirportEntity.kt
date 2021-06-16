@@ -1,6 +1,6 @@
 package com.havdulskyi.airporttickets.data.entity
 
-import com.havdulskyi.airporttickets.data.model.City
+import com.havdulskyi.airporttickets.data.dbModel.City
 
 data class AirportEntity(
     val id: String,

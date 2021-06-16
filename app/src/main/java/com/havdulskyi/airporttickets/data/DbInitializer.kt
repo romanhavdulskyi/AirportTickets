@@ -1,8 +1,8 @@
 package com.havdulskyi.airporttickets.data
 
+import com.havdulskyi.airporttickets.data.dbModel.City
 import com.havdulskyi.airporttickets.data.entity.AirportEntity
 import com.havdulskyi.airporttickets.data.entity.ProposedFlightEntity
-import com.havdulskyi.airporttickets.data.model.City
 import com.havdulskyi.airporttickets.data.repository.AirportRepository
 import com.havdulskyi.airporttickets.data.repository.CityRepository
 import com.havdulskyi.airporttickets.data.repository.ProposedFlightRepository
