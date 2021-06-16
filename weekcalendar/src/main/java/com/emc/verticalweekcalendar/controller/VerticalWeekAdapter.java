@@ -1,6 +1,5 @@
 package com.emc.verticalweekcalendar.controller;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,7 +32,7 @@ public class VerticalWeekAdapter extends RecyclerView.Adapter<VerticalWeekAdapte
     private RecyclerView recyclerView;
     private DateWatcher dateWatcher;
     private OnDateClickListener onDateClickListener;
-    private ResProvider resProvider;
+    private final ResProvider resProvider;
 
     public VerticalWeekAdapter(ResProvider resProvider) {
         this.resProvider = resProvider;

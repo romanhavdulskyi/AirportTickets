@@ -12,14 +12,14 @@ public class CalendarDay implements Serializable {
 
     private int state = DEFAULT;
 
-    private int year;
-    private int month;
+    private final int year;
+    private final int month;
     private final GregorianCalendar day;
 
-    public CalendarDay(int year, int month, int day){
+    public CalendarDay(int year, int month, int day) {
         this.year = year;
         this.month = month;
-        this.day = new GregorianCalendar(year,month,day);
+        this.day = new GregorianCalendar(year, month, day);
     }
 
     public void setState(int state) {
