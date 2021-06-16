@@ -8,10 +8,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.havdulskyi.airporttickets.R
 import com.havdulskyi.airporttickets.data.entity.PurchasedTicketEntity
 import com.havdulskyi.airporttickets.databinding.TicketItemBinding
+import com.havdulskyi.airporttickets.viewModel.main.purchased.PurchasedTicketViewModel
 
-class PurchasedTicketAdapter(private val lifecycleOwner: LifecycleOwner,
-                             private val purchasedTicketViewModel: PurchasedTicketViewModel) :
-        RecyclerView.Adapter<PurchasedTicketAdapter.ViewHolder>() {
+class PurchasedTicketAdapter(
+    private val lifecycleOwner: LifecycleOwner,
+    private val purchasedTicketViewModel: PurchasedTicketViewModel,
+) :
+    RecyclerView.Adapter<PurchasedTicketAdapter.ViewHolder>() {
 
     init {
         setHasStableIds(true)

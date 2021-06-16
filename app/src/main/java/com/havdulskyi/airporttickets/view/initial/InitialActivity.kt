@@ -13,6 +13,7 @@ import com.google.android.material.button.MaterialButton
 import com.google.firebase.auth.FirebaseAuth
 import com.havdulskyi.airporttickets.R
 import com.havdulskyi.airporttickets.view.main.MainActivity
+import com.havdulskyi.airporttickets.viewModel.initial.InitialViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class InitialActivity : AppCompatActivity() {

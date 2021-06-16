@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.havdulskyi.airporttickets.R
 import com.havdulskyi.airporttickets.databinding.PurchasedTicketFragmentBinding
+import com.havdulskyi.airporttickets.viewModel.main.purchased.PurchasedTicketViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class PurchasedTicketFragment : Fragment() {

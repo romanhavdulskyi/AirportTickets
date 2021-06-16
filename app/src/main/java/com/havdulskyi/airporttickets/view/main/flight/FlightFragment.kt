@@ -12,6 +12,7 @@ import com.emc.verticalweekcalendar.model.CalendarDay
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.havdulskyi.airporttickets.R
 import com.havdulskyi.airporttickets.databinding.FlightFragmentBinding
+import com.havdulskyi.airporttickets.viewModel.main.flight.FlightViewModel
 import kotlinx.coroutines.FlowPreview
 import org.koin.android.viewmodel.ext.android.viewModel
 import java.util.*

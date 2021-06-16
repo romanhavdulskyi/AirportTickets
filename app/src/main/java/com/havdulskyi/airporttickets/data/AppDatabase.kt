@@ -6,7 +6,8 @@ import com.havdulskyi.airporttickets.data.dao.*
 import com.havdulskyi.airporttickets.data.dbModel.*
 
 @Database(
-    entities = [UserProfile::class, Airport::class, City::class, ProposedFlight::class, PurchasedTicket::class],
+    entities = [UserProfile::class, Airport::class, City::class,
+        ProposedFlight::class, PurchasedTicket::class],
     version = 1
 )
 abstract class AppDatabase : RoomDatabase() {
