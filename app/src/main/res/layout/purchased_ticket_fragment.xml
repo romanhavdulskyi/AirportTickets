@@ -9,7 +9,7 @@
 
         <variable
             name="viewmodel"
-            type="com.havdulskyi.airporttickets.view.purchased.PurchasedTicketViewModel" />
+            type="com.havdulskyi.airporttickets.viewModel.main.purchased.PurchasedTicketViewModel" />
     </data>
     <FrameLayout
         android:layout_width="match_parent"

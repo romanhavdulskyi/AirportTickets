@@ -10,7 +10,7 @@
 
         <variable
             name="viewmodel"
-            type="com.havdulskyi.airporttickets.view.flight.FlightViewModel" />
+            type="com.havdulskyi.airporttickets.viewModel.main.flight.FlightViewModel" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

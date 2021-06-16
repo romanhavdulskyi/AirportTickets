@@ -13,7 +13,7 @@
             type="com.havdulskyi.airporttickets.data.entity.PurchasedTicketEntity" />
         <variable
             name="flightViewModel"
-            type="com.havdulskyi.airporttickets.view.purchased.PurchasedTicketViewModel" />
+            type="com.havdulskyi.airporttickets.viewModel.main.purchased.PurchasedTicketViewModel" />
     </data>
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
