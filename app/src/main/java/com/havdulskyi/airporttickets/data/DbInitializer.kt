@@ -10,6 +10,12 @@ import com.havdulskyi.airporttickets.data.repository.UserProfileRepository
 import java.time.LocalDate
 import java.time.ZoneId
 
+/**
+ * The component re-initializes db state on each the app start,
+ * also it leads purchased tickets to remove because of replacing airports' and flights' records
+ * and broking foreign key relationships
+ */
+
 class DbInitializer(
     private val cityRepository: CityRepository,
     private val airportRepository: AirportRepository,
